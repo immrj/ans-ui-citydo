@@ -2,8 +2,8 @@
   "name": "ans-ui-citydo",
   "version": "3.0.0",
   "description": "ans ui modified by citydo",
-  "main": "lib/ans-ui-citydo.min.js",
-  "style": "lib/ans-ui-citydo.min.css",
+  "main": "lib/ans-ui.min.js",
+  "style": "lib/ans-ui.min.css",
   "scripts": {
     "build": "npm run clean && cross-env NODE_ENV=production webpack --config ./build/webpack.config.prod.js && webpack --config ./build/webpack.config.locale.js",
     "dev": "npm run clean && parcel ./example/index.html -p 4000",

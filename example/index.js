@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './app.vue'
 import router from './router'
-import '../lib/ans-ui-citydo.min.css'
-import ans from '../lib/ans-ui-citydo.min.js'
+import '../lib/ans-ui.min.css'
+import ans from '../lib/ans-ui.min.js'
 
 Vue.use(ans)
 
