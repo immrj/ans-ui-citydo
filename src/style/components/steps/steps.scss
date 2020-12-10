@@ -1,0 +1,414 @@
+$border-color-split: #e8eaec;
+$steps-wait-icon-color: #ccc;
+$steps-wait-title-color: #999;
+$steps-wait-description-color: $steps-wait-title-color;
+$steps-wait-tail-color: $border-color-split;
+$steps-title-color: #666;
+
+.#{$lib-name}-steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  font-size: 0;
+  line-height: 1.5;
+
+  &-item {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden;
+
+    &:last-child {
+      -webkit-box-flex: 0;
+      -ms-flex: 0;
+      flex: none;
+    }
+
+    &.#{$lib-name}-steps-status-wait {
+      .#{$lib-name}-steps-head-inner {
+        background-color: #fff;
+
+        > .#{$lib-name}-steps-icon, span {
+          color: $steps-wait-icon-color;
+        }
+      }
+
+      .#{$lib-name}-steps-title {
+        color: $steps-wait-title-color;
+      }
+
+      .#{$lib-name}-steps-content {
+        color: $steps-wait-description-color;
+      }
+
+      .#{$lib-name}-steps-tail > i {
+        background-color: $steps-wait-tail-color;
+      }
+    }
+
+    &.#{$lib-name}-steps-status-process {
+      .#{$lib-name}-steps-head-inner {
+        border-color: $primary-color;
+        background-color: $primary-color;
+
+        > .#{$lib-name}-steps-icon, span {
+          color: #fff;
+        }
+      }
+
+      .#{$lib-name}-steps-title {
+        color: $steps-title-color;
+      }
+
+      .#{$lib-name}-steps-content {
+        color: $steps-title-color;
+      }
+
+      .#{$lib-name}-steps-tail > i {
+        background-color: $border-color-split;
+      }
+    }
+
+    &.#{$lib-name}-steps-status-finish {
+      .#{$lib-name}-steps-head-inner {
+        background-color: #fff;
+        border-color: $primary-color;
+
+        > .#{$lib-name}-steps-icon, span {
+          color: $primary-color;
+        }
+      }
+
+      .#{$lib-name}-steps-tail > i:after {
+        width: 100%;
+        background: $primary-color;
+        transition: all .2s ease-in-out;
+        opacity: 1;
+      }
+
+      .#{$lib-name}-steps-title {
+        color: $steps-wait-title-color;
+      }
+
+      .#{$lib-name}-steps-content {
+        color: $steps-wait-description-color;
+      }
+    }
+
+    &.#{$lib-name}-steps-status-error {
+      .#{$lib-name}-steps-head-inner {
+        background-color: #fff;
+        border-color: $error-color;
+
+        > .#{$lib-name}-steps-icon {
+          color: $error-color;
+        }
+      }
+
+      .#{$lib-name}-steps-title {
+        color: $error-color;
+      }
+
+      .#{$lib-name}-steps-content {
+        color: $error-color;
+      }
+
+      .#{$lib-name}-steps-tail > i {
+        background-color: $border-color-split;
+      }
+    }
+
+    &.#{$lib-name}-steps-next-error {
+      .#{$lib-name}-steps-tail > i,
+      .#{$lib-name}-steps-tail > i:after {
+        background-color: $error-color;
+      }
+    }
+
+    &.#{$lib-name}-steps-custom {
+      .#{$lib-name}-steps-head-inner {
+        background: none;
+        border: 0;
+        width: auto;
+        height: auto;
+
+        > .#{$lib-name}-steps-icon {
+          font-size: 20px;
+          top: 2px;
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      &.#{$lib-name}-steps-status-process {
+        .#{$lib-name}-steps-head-inner > .#{$lib-name}-steps-icon {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  &-item:last-child &-tail {
+    display: none;
+  }
+
+  .#{$lib-name}-steps-head,
+  .#{$lib-name}-steps-main {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .#{$lib-name}-steps-head {
+    background: #fff;
+  }
+
+  .#{$lib-name}-steps-head-inner {
+    display: block;
+    width: 26px;
+    height: 26px;
+    line-height: 24px;
+    margin-right: 8px;
+    text-align: center;
+    border: 1px solid $steps-wait-icon-color;
+    border-radius: 50%;
+    font-size: 14px;
+    transition: background-color .2s ease-in-out;
+
+    > .#{$lib-name}-steps-icon {
+      line-height: 1;
+      position: relative;
+
+      &.#{$lib-name}-icon {
+        font-size: 12px;
+
+        &-ios-checkmark-empty,
+        &-ios-close-empty {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .#{$lib-name}-steps-main {
+    margin-top: 2.5px;
+    display: inline;
+  }
+
+  .#{$lib-name}-steps-custom .#{$lib-name}-steps-title {
+    margin-top: 2.5px;
+  }
+
+  .#{$lib-name}-steps-title {
+    display: inline-block;
+    margin-bottom: 4px;
+    padding-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    background: #fff;
+
+    > a:first-child:last-child {
+      color: #666;
+    }
+  }
+
+  .#{$lib-name}-steps-item-last {
+    .#{$lib-name}-steps-title {
+      padding-right: 0;
+      width: 100%;
+    }
+  }
+
+  .#{$lib-name}-steps-content {
+    font-size: 12px;
+    color: #999;
+  }
+
+  .#{$lib-name}-steps-tail {
+    width: 100%;
+    padding: 0 10px;
+    position: absolute;
+    left: 0;
+    top: 13px;
+
+    > i {
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      vertical-align: top;
+      background: $border-color-split;
+      border-radius: 1px;
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 0;
+        height: 100%;
+        background: $border-color-split;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+
+  &.#{$lib-name}-steps-small {
+    .#{$lib-name}-steps-head-inner {
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      margin-right: 10px;
+      text-align: center;
+      border-radius: 50%;
+      font-size: 12px;
+
+      > .#{$lib-name}-steps-icon.#{$lib-name}-icon {
+        font-size: 12px;
+        transform: scale(0.8);
+        top: 1px;
+      }
+    }
+
+    .#{$lib-name}-steps-main {
+      margin-top: 0;
+    }
+
+    .#{$lib-name}-steps-title {
+      margin-bottom: 4px;
+      margin-top: 0;
+      color: #666;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .#{$lib-name}-steps-content {
+      font-size: 12px;
+      color: #999;
+      padding-left: 30px;
+    }
+
+    .#{$lib-name}-steps-tail {
+      top: 8px;
+      padding: 0 8px;
+
+      > i {
+        height: 1px;
+        width: 100%;
+        border-radius: 1px;
+      }
+    }
+  }
+
+  &.#{$lib-name}-steps-small .#{$lib-name}-steps-item.#{$lib-name}-steps-custom .#{$lib-name}-steps-head-inner,
+  .#{$lib-name}-steps-item.#{$lib-name}-steps-custom .#{$lib-name}-steps-head-inner {
+    width: inherit;
+    height: inherit;
+    line-height: inherit;
+    border-radius: 0;
+    border: 0;
+    background: none;
+  }
+}
+
+.#{$lib-name}-steps-vertical {
+  display: block;
+
+  .#{$lib-name}-steps-item {
+    display: block;
+    overflow: visible;
+  }
+
+  .#{$lib-name}-steps-tail {
+    position: absolute;
+    left: 13px;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    padding: 30px 0 4px 0;
+
+    > i {
+      height: 100%;
+      width: 1px;
+
+      &:after {
+        height: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .#{$lib-name}-steps-status-finish {
+    .#{$lib-name}-steps-tail > i:after {
+      height: 100%;
+    }
+  }
+
+  .#{$lib-name}-steps-head {
+    float: left;
+
+    &-inner {
+      margin-right: 16px;
+    }
+  }
+
+  .#{$lib-name}-steps-main {
+    min-height: 47px;
+    overflow: hidden;
+    display: block;
+
+    .#{$lib-name}-steps-title {
+      line-height: 26px;
+    }
+
+    .#{$lib-name}-steps-content {
+      padding-bottom: 12px;
+      padding-left: 0;
+    }
+  }
+
+  .#{$lib-name}-steps-custom .#{$lib-name}-steps-icon {
+    left: 4px;
+  }
+
+  &.#{$lib-name}-steps-small .#{$lib-name}-steps-custom .#{$lib-name}-steps-icon {
+    left: 0;
+  }
+}
+
+.#{$lib-name}-steps-vertical.#{$lib-name}-steps-small {
+  .#{$lib-name}-steps-tail {
+    position: absolute;
+    left: 9px;
+    top: 0;
+    padding: 22px 0 4px 0;
+
+    > i {
+      height: 100%;
+    }
+  }
+
+  .#{$lib-name}-steps-title {
+    line-height: 18px;
+  }
+}
+
+.#{$lib-name}-steps-horizontal {
+  &.#{$lib-name}-steps-hidden {
+    visibility: hidden;
+  }
+
+  .#{$lib-name}-steps-content {
+    //max-width: 100px;
+    padding-left: 35px;
+  }
+
+  .#{$lib-name}-steps-item:not(:first-child) .#{$lib-name}-steps-head {
+    padding-left: 10px;
+    margin-left: -10px;
+  }
+}

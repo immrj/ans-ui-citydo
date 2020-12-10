@@ -22,6 +22,7 @@
         <li><router-link to="/drawer">drawer</router-link></li>
         <li><router-link to="/table">table</router-link></li>
         <li><router-link to="/form">form</router-link></li>
+        <li><router-link to="/steps">steps</router-link></li>
       </ul>
     </div>
     <router-view></router-view>

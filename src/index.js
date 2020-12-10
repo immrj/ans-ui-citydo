@@ -16,6 +16,7 @@ import { xProgress } from '../packages/vue-progress/src'
 import { xDrawer } from '../packages/vue-drawer/src'
 import { xTable, xTableColumn } from '../packages/vue-table/src'
 import { xForm, xFormItem } from '../packages/vue-form/src'
+import { xSteps, xStep } from '../packages/vue-steps/src'
 import locale from './locale'
 
 import './style/index.scss'
@@ -47,6 +48,8 @@ const install = (Vue, config = {}) => {
   Vue.component(xTableColumn.name, xTableColumn)
   Vue.component(xForm.name, xForm)
   Vue.component(xFormItem.name, xFormItem)
+  Vue.component(xSteps.name, xSteps)
+  Vue.component(xStep.name, xStep)
 
   let { message, notice, modal, spin = {}, slotI18n } = config
 
@@ -105,5 +108,7 @@ export default {
   xTable,
   xTableColumn,
   xForm,
-  xFormItem
+  xFormItem,
+  xSteps,
+  xStep
 }

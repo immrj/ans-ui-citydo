@@ -23,7 +23,8 @@ const router = new Router({
     { path: '/cascader', name: 'cascader', component: () => import('../pages/cascader/cascader') },
     { path: '/drawer', name: 'drawer', component: () => import('../pages/drawer/drawer') },
     { path: '/table', name: 'table', component: () => import('../pages/table/table') },
-    { path: '/form', name: 'form', component: () => import('../pages/form/form') }
+    { path: '/form', name: 'form', component: () => import('../pages/form/form') },
+    { path: '/steps', name: 'form', component: () => import('../pages/steps/steps') }
   ]
 })
 
