@@ -24,7 +24,9 @@ const router = new Router({
     { path: '/drawer', name: 'drawer', component: () => import('../pages/drawer/drawer') },
     { path: '/table', name: 'table', component: () => import('../pages/table/table') },
     { path: '/form', name: 'form', component: () => import('../pages/form/form') },
-    { path: '/steps', name: 'form', component: () => import('../pages/steps/steps') }
+    { path: '/steps', name: 'steps', component: () => import('../pages/steps/steps') },
+    { path: '/dropdown', name: 'dropdown', component: () => import('../pages/dropdown/dropdown') },
+    { path: '/tabs', name: 'tabs', component: () => import('../pages/tabs/tabs') },
   ]
 })
 

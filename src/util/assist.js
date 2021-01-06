@@ -1,4 +1,5 @@
-// base on iview assist.js
+import Vue from 'vue'
+const isServer = Vue.prototype.$isServer
 
 // Find components upward
 export function findComponentUpward (context, componentName, componentNames) {
@@ -57,3 +58,6 @@ export function findComponentsUpward (context, componentName) {
     return []
   }
 }
+
+// watch DOM change
+export const MutationObserver = isServer ? false : window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver || false

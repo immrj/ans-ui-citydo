@@ -1,0 +1,291 @@
+//@tabs-prefix-cls: ~"@{css-prefix}tabs";
+
+.#{$lib-name}-tabs {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  color: $page-text-color;
+
+  zoom: 1;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+
+  &-bar {
+    outline: none;
+  }
+
+  &-ink-bar {
+    height: 2px;
+    box-sizing: border-box;
+    background-color: $primary-color;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    z-index: 1;
+    transition: transform .3s $ease-in-out;
+    transform-origin: 0 0;
+  }
+
+  &-bar {
+    border-bottom: 1px solid $border-color-base;
+    margin-bottom: 16px;
+  }
+
+  &-nav-container {
+    margin-bottom: -1px;
+    line-height: 1.5;
+    font-size: 14px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+
+    zoom: 1;
+
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+    }
+
+    &:after {
+      clear: both;
+      visibility: hidden;
+      font-size: 0;
+      height: 0;
+    }
+  }
+
+  &-nav-container:focus {
+    outline: none;
+
+    .#{$lib-name}-tabs-tab-focused {
+      border-color: tint($primary-color, 20%) !important;
+    }
+  }
+
+  &-nav-container-scrolling {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  &-nav-wrap {
+    overflow: hidden;
+    margin-bottom: -1px;
+  }
+
+  &-nav-scroll {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &-nav-right {
+    float: right;
+    margin-left: 5px;
+  }
+
+  &-nav-prev, &-nav-next {
+    width: 32px;
+    text-align: center;
+    position: absolute;
+    line-height: 32px;
+    cursor: pointer;
+
+    i {
+      font-size: 16px;
+    }
+  }
+
+  &-nav-prev {
+    left: 0;
+  }
+
+  &-nav-next {
+    right: 0;
+  }
+
+  &-nav-scrollable {
+    padding: 0 32px;
+  }
+
+  &-nav-scroll-disabled {
+    display: none;
+  }
+
+  &-nav {
+    padding-left: 0;
+    margin: 0;
+    float: left;
+    list-style: none;
+    box-sizing: border-box;
+    position: relative;
+    transition: transform 0.5s $ease-in-out;
+
+    &:before,
+    &:after {
+      display: table;
+      content: " ";
+    }
+
+    &:after {
+      clear: both;
+    }
+
+    .#{$lib-name}-tabs-tab-disabled {
+      pointer-events: none;
+      cursor: default;
+      color: #ccc;
+    }
+
+    .#{$lib-name}-tabs-tab {
+      display: inline-block;
+      height: 100%;
+      padding: 8px 16px;
+      margin-right: 16px;
+      box-sizing: border-box;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+      transition: color .3s $ease-in-out;
+
+      &:hover {
+        color: tint($primary-color, 20%);
+      }
+
+      &:active {
+        color: shade($primary-color, 5%);
+      }
+
+      i {
+        width: 14px;
+        height: 14px;
+        margin-right: 8px;
+      }
+    }
+
+    .#{$lib-name}-tabs-tab-active {
+      color: $primary-color;
+    }
+  }
+
+  &-mini &-nav-container {
+    font-size: 14px;
+  }
+
+  &-mini &-tab {
+    margin-right: 0;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  & {
+    .#{$lib-name}-tabs-content-animated {
+      display: flex;
+      flex-direction: row;
+      will-change: transform;
+      transition: transform .3s $ease-in-out;
+    }
+
+    .#{$lib-name}-tabs-tabpane {
+      flex-shrink: 0;
+      width: 100%;
+      transition: opacity .3s;
+      opacity: 1;
+      outline: none;
+    }
+
+    .#{$lib-name}-tabs-tabpane-inactive {
+      opacity: 0;
+      height: 0;
+    }
+  }
+
+  // card style
+  &-card > &-bar &-nav-container {
+    height: 32px;
+  }
+
+  &-card > &-bar &-ink-bar {
+    visibility: hidden;
+  }
+
+  &-card > &-bar &-tab {
+    margin: 0;
+    margin-right: 4px;
+    height: 31px;
+    padding: 5px 16px 4px;
+    border: 1px solid $border-color-base;
+    border-bottom: 0;
+    border-radius: 4px 4px 0 0;
+    transition: all 0.3s $ease-in-out;
+    background: #f8f8f9;
+
+    > i.#{$lib-name}-icon-close {
+      transform: translateZ(0) scale(.8) !important;
+    }
+  }
+
+  &-card > &-bar &-tab-active {
+    height: 32px;
+    padding-bottom: 5px;
+    background: #fff;
+    transform: translateZ(0);
+    border-color: $border-color-base;
+    color: $primary-color;
+  }
+
+  &-card > &-bar &-nav-wrap {
+    margin-bottom: 0;
+  }
+
+  &-card > &-bar &-tab &-close {
+    width: 0;
+    height: 22px;
+    font-size: 10px;
+    margin-right: 0;
+    color: #999;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+    top: -1px;
+    transform-origin: 100% 50%;
+    transition: all 0.3s $ease-in-out;
+
+    &:hover {
+      color: #444;
+    }
+  }
+
+  &-card > &-bar &-tab-active &-close,
+  &-card > &-bar &-tab:hover &-close {
+    width: 22px;
+    transform: translateZ(0);
+    margin-right: -6px;
+  }
+
+  &-context-menu {
+    position: absolute;
+  }
+}
+
+.#{$lib-name}-tabs-no-animation {
+  > .#{$lib-name}-tabs-content {
+    transform: none !important;
+
+    > .#{$lib-name}-tabs-tabpane-inactive {
+      display: none;
+    }
+  }
+}

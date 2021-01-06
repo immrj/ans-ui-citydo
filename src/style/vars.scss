@@ -8,6 +8,10 @@ $icon-path: "./font";
 $primary-color: #3790FB !default;
 $primary-color-hover: #52A0FF !default;
 $primary-color-active: #287FE8 !default;
+$link-color: $primary-color;
+$link-hover-color: tint($link-color, 20%);
+$link-active-color: shade($link-color, 5%);
+$selected-color: fade($primary-color, 90%);
 $sub-color: #ff8c00 !default;
 $sub-color-hover: #ff981a !default;
 $sub-color-active: #ef6c00 !default;
@@ -34,7 +38,7 @@ $border-radius-base: 4px;
 
 // 边框颜色
 $border-color-base: #e4eaf1 !default;
-$box-shadow-base: 0 2px 8px 0 rgba(0,0,0,0.14) !default;
+$box-shadow-base: 0 2px 8px 0 rgba(0, 0, 0, 0.14) !default;
 
 // 背景色
 $background-color-base: #fff;
@@ -46,3 +50,20 @@ $animation-prefix: "x-ani-" !default;
 $animation-time: .3s;
 $transition-time: .2s;
 $ease-in-out: ease-in-out;
+
+$body-background: #fff;
+$component-background: #fff;
+$font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+$code-family: Consolas, Menlo, Courier, monospace;
+$title-color: #17233d;
+$text-color: #515a6e;
+$text-color-secondary: fade(#000, 45%);
+$heading-color: fade(#000, 85%);
+$heading-color-dark: fade(#fff, 100%);
+$font-size-base: 14px;
+$font-size-small: 12px;
+$font-size-large: $font-size-base + 2px;
+$line-height-base: 1.5;
+$border-radius-base: 4px;
+$border-radius-small: 2px;
+$cursor-disabled: not-allowed;

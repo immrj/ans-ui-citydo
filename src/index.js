@@ -17,6 +17,8 @@ import { xDrawer } from '../packages/vue-drawer/src'
 import { xTable, xTableColumn } from '../packages/vue-table/src'
 import { xForm, xFormItem } from '../packages/vue-form/src'
 import { xSteps, xStep } from '../packages/vue-steps/src'
+import { xDropdown, xDropdownMenu, xDropdownItem } from '../packages/vue-dropdown/src'
+import { xTabs, xTabPane } from '../packages/vue-tabs/src'
 import locale from './locale'
 
 import './style/index.scss'
@@ -50,6 +52,11 @@ const install = (Vue, config = {}) => {
   Vue.component(xFormItem.name, xFormItem)
   Vue.component(xSteps.name, xSteps)
   Vue.component(xStep.name, xStep)
+  Vue.component(xDropdown.name, xDropdown)
+  Vue.component(xDropdownMenu.name, xDropdownMenu)
+  Vue.component(xDropdownItem.name, xDropdownItem)
+  Vue.component(xTabPane.name, xTabPane)
+  Vue.component(xTabs.name, xTabs)
 
   let { message, notice, modal, spin = {}, slotI18n } = config
 
@@ -110,5 +117,10 @@ export default {
   xForm,
   xFormItem,
   xSteps,
-  xStep
+  xStep,
+  xDropdown,
+  xDropdownMenu,
+  xDropdownItem,
+  xTabs,
+  xTabPane
 }
