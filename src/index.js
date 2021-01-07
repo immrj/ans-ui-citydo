@@ -19,6 +19,7 @@ import { xForm, xFormItem } from '../packages/vue-form/src'
 import { xSteps, xStep } from '../packages/vue-steps/src'
 import { xDropdown, xDropdownMenu, xDropdownItem } from '../packages/vue-dropdown/src'
 import { xTabs, xTabPane } from '../packages/vue-tabs/src'
+import { xBadge } from '../packages/vue-badge/src'
 import locale from './locale'
 
 import './style/index.scss'
@@ -57,6 +58,7 @@ const install = (Vue, config = {}) => {
   Vue.component(xDropdownItem.name, xDropdownItem)
   Vue.component(xTabPane.name, xTabPane)
   Vue.component(xTabs.name, xTabs)
+  Vue.component(xBadge.name, xBadge)
 
   let { message, notice, modal, spin = {}, slotI18n } = config
 
@@ -122,5 +124,6 @@ export default {
   xDropdownMenu,
   xDropdownItem,
   xTabs,
-  xTabPane
+  xTabPane,
+  xBadge
 }

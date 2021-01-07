@@ -39,7 +39,8 @@ export default {
         'form',
         'steps',
         'dropdown',
-        'tabs'
+        'tabs',
+        'badge'
       ]
     }
   }
