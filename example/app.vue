@@ -40,7 +40,8 @@ export default {
         'steps',
         'dropdown',
         'tabs',
-        'badge'
+        'badge',
+        'split'
       ]
     }
   }

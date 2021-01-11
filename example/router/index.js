@@ -28,6 +28,7 @@ const router = new Router({
     { path: '/dropdown', name: 'dropdown', component: () => import('../pages/dropdown/dropdown') },
     { path: '/tabs', name: 'tabs', component: () => import('../pages/tabs/tabs') },
     { path: '/badge', name: 'badge', component: () => import('../pages/badge/badge') },
+    { path: '/split', name: 'split', component: () => import('../pages/split/split') },
   ]
 })
 
