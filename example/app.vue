@@ -41,7 +41,8 @@ export default {
         'dropdown',
         'tabs',
         'badge',
-        'split'
+        'split',
+        'grid'
       ]
     }
   }

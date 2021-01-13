@@ -21,6 +21,7 @@ import { xDropdown, xDropdownMenu, xDropdownItem } from '../packages/vue-dropdow
 import { xTabs, xTabPane } from '../packages/vue-tabs/src'
 import { xBadge } from '../packages/vue-badge/src'
 import { xSplit } from '../packages/vue-split/src'
+import { xRow, xCol } from '../packages/vue-grid/src'
 import locale from './locale'
 
 import './style/index.scss'
@@ -61,6 +62,8 @@ const install = (Vue, config = {}) => {
   Vue.component(xTabs.name, xTabs)
   Vue.component(xBadge.name, xBadge)
   Vue.component(xSplit.name, xSplit)
+  Vue.component(xRow.name, xRow)
+  Vue.component(xCol.name, xCol)
 
   let { message, notice, modal, spin = {}, slotI18n } = config
 
@@ -128,5 +131,7 @@ export default {
   xTabs,
   xTabPane,
   xBadge,
-  xSplit
+  xSplit,
+  xRow,
+  xCol
 }
