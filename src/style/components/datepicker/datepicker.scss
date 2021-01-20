@@ -181,7 +181,7 @@
         cursor: pointer;
         font-weight: inherit;
         &.bg-hover {
-          background: lighten($primary-color, 50);
+          background: lighten($primary-color, 20);
           color: $title-color-light;
         }
         &.bg-hover-start {
@@ -207,7 +207,7 @@
         position: relative;
         transition: all 0.2s;
         &:hover {
-          background: lighten($primary-color, 50);
+          background: lighten($primary-color, 20);
         }
       }
       b {
@@ -407,7 +407,7 @@
         cursor: pointer;
         border-radius: 4px;
         &:hover {
-          background: lighten($primary-color, 50);
+          background: lighten($primary-color, 20);
         }
         &.act {
           background: $primary-color;

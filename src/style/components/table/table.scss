@@ -2,7 +2,7 @@ $component-name: $lib-name + "-table";
 $table-border-color: $border-color-base;
 $table-header-bg: $background-color-disabled;
 $table-stripe-row-bg: lighten($background-color-disabled, 1);
-$table-row-hover-bg: lighten($primary-color, 49);
+$table-row-hover-bg: lighten($primary-color, 39);
 $order-triangle-height: 4px;
 
 .#{$component-name} {

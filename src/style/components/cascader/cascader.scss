@@ -109,7 +109,7 @@ $max-height: 200px;
       }
       //e6f7ff
       &:not(.disabled):hover {
-        background: lighten($primary-color-hover, 45);
+        background: lighten($primary-color-hover, 35);
       }
       i {
         position: absolute;

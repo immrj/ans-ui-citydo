@@ -123,7 +123,7 @@ $page-text-active-color: $title-color-dark;
   }
   .#{$page-name}-disabled {
     cursor: not-allowed !important;
-    color: lighten($page-text-color, 40%) !important;
+    color: lighten($page-text-color, 30%) !important;
     border-color: $page-border-color !important;
   }
   .page-input {

@@ -25,7 +25,7 @@ $option-font-size: 14px;
     .suffix-area {
       cursor: pointer;
       .clear {
-        color: lighten($primary-color, 40);
+        color: lighten($primary-color, 30);
         &:hover {
           color: $primary-color;
         }
@@ -71,7 +71,7 @@ $option-font-size: 14px;
       min-height: 22px;
       margin: 3px 0 3px 10px;
       padding: 0 10px;
-      background: lighten($primary-color-hover, 45);
+      background: lighten($primary-color-hover, 35);
       border-radius: 2px;
       cursor: default;
       .tag-text {
@@ -184,7 +184,7 @@ $option-font-size: 14px;
     transition: background $transition-time;
     &.focused,
     &:hover {
-      background: lighten($primary-color-hover, 45);
+      background: lighten($primary-color-hover, 35);
     }
     .highlight {
       color: $sub-color;
