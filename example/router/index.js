@@ -30,6 +30,7 @@ const router = new Router({
     { path: '/badge', name: 'badge', component: () => import('../pages/badge/badge') },
     { path: '/split', name: 'split', component: () => import('../pages/split/split') },
     { path: '/grid', name: 'grid', component: () => import('../pages/grid/grid') },
+    { path: '/tree', name: 'tree', component: () => import('../pages/tree/tree') },
   ]
 })
 
