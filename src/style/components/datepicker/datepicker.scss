@@ -180,6 +180,7 @@
         bottom: 0;
         cursor: pointer;
         font-weight: inherit;
+        margin-bottom: 0;
         &.bg-hover {
           background: lighten($primary-color, 20);
           color: $title-color-light;
