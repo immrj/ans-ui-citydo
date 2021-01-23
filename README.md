@@ -3,10 +3,13 @@
 > Ans UI modified by CityDO
 
 ## New Components
-*[x] Setps 
-*[x] Tabs 
-*[x] Dropdown
-*[x] Badge 
+*[x] Steps    
+*[x] Tabs    
+*[x] Dropdown   
+*[x] Badge   
+*[x] Split   
+*[x] Grid   
+*[x] Tree   
 
 ## Installation
 
