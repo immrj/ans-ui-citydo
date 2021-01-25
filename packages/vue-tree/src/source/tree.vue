@@ -10,7 +10,7 @@
             :children-key="childrenKey">
         </Tree-node>
         <div :class="[prefixCls + '-empty']" v-if="!stateTree.length">{{ localeEmptyText }}</div>
-        <div class="ivu-tree-context-menu" :style="contextMenuStyles">
+        <div :class="prefixCls + '-context-menu'" :style="contextMenuStyles">
             <x-dropdown trigger="custom" :visible="contextMenuVisible" transfer @on-clickoutside="handleClickContextMenuOutside">
                 <x-dropdown-menu slot="list">
                     <slot name="contextMenu"></slot>
