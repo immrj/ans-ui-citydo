@@ -4,7 +4,7 @@
       <li @contextmenu.stop="handleContextmenu(data, $event)" @selectstart.stop="handlePreventSelect(data, $event)">
         <span :class="arrowClasses" @click="handleExpand">
           <i v-if="showArrow" :class="libName + '-icon-arrow-right'"></i>
-          <i v-if="showLoading" :class="libName + '-icon-spinner'"></i>
+          <i v-if="showLoading" :class="libName + '-icon-spinner2'"></i>
         </span>
         <x-checkbox
             v-if="showCheckbox"
@@ -17,16 +17,17 @@
           <Render v-else-if="isParentRender" :render="parentRender" :data="data" :node="node"></Render>
           <template v-else>{{ data.title }}</template>
         </span>
-        <x-tree-node
-            v-if="data.expand"
-            :appear="appearByClickArrow"
-            v-for="(item, i) in children"
-            :key="i"
-            :data="item"
-            :multiple="multiple"
-            :show-checkbox="showCheckbox"
-            :children-key="childrenKey">
-        </x-tree-node>
+        <div v-show="data.expand">
+          <x-tree-node
+              :appear="appearByClickArrow"
+              v-for="(item, i) in children"
+              :key="i"
+              :data="item"
+              :multiple="multiple"
+              :show-checkbox="showCheckbox"
+              :children-key="childrenKey">
+          </x-tree-node>
+        </div>
       </li>
     </ul>
   </collapse-transition>
