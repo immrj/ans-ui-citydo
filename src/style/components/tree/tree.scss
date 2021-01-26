@@ -3,34 +3,11 @@ $tree-prefix-cls: $lib-name + "-tree";
 .#{$tree-prefix-cls} {
   position: relative;
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-size: $font-size-base;
+  &-children {
+    margin: 8px 0;
+    white-space: nowrap;
 
-    &.#{$lib-name}-dropdown-menu {
-      padding: 0;
-    }
-
-    li {
-      list-style: none;
-      margin: 8px 0;
-      padding: 0;
-      white-space: nowrap;
-      outline: none;
-
-      &.#{$lib-name}-dropdown-item {
-        margin: 0;
-        padding: 7px 16px;
-        white-space: nowrap;
-      }
-    }
-  }
-
-  li {
-    ul {
-      margin: 0;
+    .#{$tree-prefix-cls}-children {
       padding: 0 0 0 18px;
     }
   }
@@ -65,7 +42,7 @@ $tree-prefix-cls: $lib-name + "-tree";
       font-size: $font-size-base;
       vertical-align: middle;
 
-      &.#{$lib-name}-icon-spinner {
+      &.#{$lib-name}-icon-spinner2 {
         animation: rotating 1s linear infinite;
       }
     }

@@ -1,35 +1,33 @@
 <template>
   <collapse-transition :appear="appear">
-    <ul :class="classes">
-      <li @contextmenu.stop="handleContextmenu(data, $event)" @selectstart.stop="handlePreventSelect(data, $event)">
-        <span :class="arrowClasses" @click="handleExpand">
-          <i v-if="showArrow" :class="libName + '-icon-arrow-right'"></i>
-          <i v-if="showLoading" :class="libName + '-icon-spinner2'"></i>
-        </span>
-        <x-checkbox
-            v-if="showCheckbox"
-            :value="data.checked"
-            :indeterminate="data.indeterminate"
-            :disabled="data.disabled || data.disableCheckbox"
-            @click.native.prevent="handleCheck"></x-checkbox>
-        <span :class="titleClasses" @click="handleClickNode">
-          <Render v-if="data.render" :render="data.render" :data="data" :node="node"></Render>
-          <Render v-else-if="isParentRender" :render="parentRender" :data="data" :node="node"></Render>
-          <template v-else>{{ data.title }}</template>
-        </span>
-        <div v-show="data.expand">
-          <x-tree-node
-              :appear="appearByClickArrow"
-              v-for="(item, i) in children"
-              :key="i"
-              :data="item"
-              :multiple="multiple"
-              :show-checkbox="showCheckbox"
-              :children-key="childrenKey">
-          </x-tree-node>
-        </div>
-      </li>
-    </ul>
+    <div :class="classes" @contextmenu.stop="handleContextmenu(data, $event)" @selectstart.stop="handlePreventSelect(data, $event)">
+      <span :class="arrowClasses" @click="handleExpand">
+        <i v-if="showArrow" :class="libName + '-icon-arrow-right'"></i>
+        <i v-if="showLoading" :class="libName + '-icon-spinner2'"></i>
+      </span>
+      <x-checkbox
+          v-if="showCheckbox"
+          :value="data.checked"
+          :indeterminate="data.indeterminate"
+          :disabled="data.disabled || data.disableCheckbox"
+          @click.native.prevent="handleCheck"></x-checkbox>
+      <span :class="titleClasses" @click="handleClickNode">
+        <Render v-if="data.render" :render="data.render" :data="data" :node="node"></Render>
+        <Render v-else-if="isParentRender" :render="parentRender" :data="data" :node="node"></Render>
+        <template v-else>{{ data.title }}</template>
+      </span>
+      <div v-show="data.expand">
+        <x-tree-node
+            :appear="appearByClickArrow"
+            v-for="(item, i) in children"
+            :key="i"
+            :data="item"
+            :multiple="multiple"
+            :show-checkbox="showCheckbox"
+            :children-key="childrenKey">
+        </x-tree-node>
+      </div>
+    </div>
   </collapse-transition>
 </template>
 <script>
