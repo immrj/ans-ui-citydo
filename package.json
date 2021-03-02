@@ -1,6 +1,6 @@
 {
   "name": "ans-ui-citydo",
-  "version": "3.8.4",
+  "version": "3.9.0",
   "description": "ans ui modified by citydo",
   "main": "lib/ans-ui.min.js",
   "style": "lib/ans-ui.min.css",
