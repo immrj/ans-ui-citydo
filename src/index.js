@@ -23,6 +23,9 @@ import { xBadge } from '../packages/vue-badge/src'
 import { xSplit } from '../packages/vue-split/src'
 import { xRow, xCol } from '../packages/vue-grid/src'
 import { xTree } from '../packages/vue-tree/src'
+import { xCollapse, xPanel } from '../packages/vue-collapse/src'
+
+
 import locale from './locale'
 
 import './style/index.scss'
@@ -66,6 +69,10 @@ const install = (Vue, config = {}) => {
   Vue.component(xRow.name, xRow)
   Vue.component(xCol.name, xCol)
   Vue.component(xTree.name, xTree)
+  Vue.component(xCollapse.name, xCollapse)
+  Vue.component(xPanel.name, xPanel)
+
+
 
   let { message, notice, modal, spin = {}, slotI18n } = config
 
@@ -136,5 +143,7 @@ export default {
   xSplit,
   xRow,
   xCol,
-  xTree
+  xTree,
+  xCollapse,
+  xPanel
 }

@@ -31,6 +31,8 @@ const router = new Router({
     { path: '/split', name: 'split', component: () => import('../pages/split/split') },
     { path: '/grid', name: 'grid', component: () => import('../pages/grid/grid') },
     { path: '/tree', name: 'tree', component: () => import('../pages/tree/tree') },
+    { path: '/collapse', name: 'collapse', component: () => import('../pages/collapse/collapse') },
+
   ]
 })
 

@@ -43,7 +43,8 @@ export default {
         'badge',
         'split',
         'grid',
-        'tree'
+        'tree',
+        'collapse',
       ]
     }
   }
