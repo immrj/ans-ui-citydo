@@ -27,7 +27,7 @@
     <section class="demo-section">
       <h4>日期区间</h4>
       <div>
-        <x-datepicker type="daterange"></x-datepicker>
+        <x-datepicker type="daterange" :disabled="true"></x-datepicker>
       </div>
     </section>
 
