@@ -222,7 +222,7 @@ export default {
         }
         this.contextMenuStyles = position
         this.contextMenuVisible = true
-        this.$emit('on-contextmenu', data, event, position)
+        this.$emit('node-contextmenu', data, event, position)
       })
     },
     handleClickContextMenuOutside () {

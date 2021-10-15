@@ -23,6 +23,7 @@ import { xBadge } from '../packages/vue-badge/src'
 import { xSplit } from '../packages/vue-split/src'
 import { xRow, xCol } from '../packages/vue-grid/src'
 import { xTree } from '../packages/vue-tree/src'
+import { xTreePro } from '../packages/vue-tree-pro/src'
 import { xCollapse, xPanel } from '../packages/vue-collapse/src'
 
 
@@ -69,6 +70,7 @@ const install = (Vue, config = {}) => {
   Vue.component(xRow.name, xRow)
   Vue.component(xCol.name, xCol)
   Vue.component(xTree.name, xTree)
+  Vue.component(xTreePro.name, xTreePro)
   Vue.component(xCollapse.name, xCollapse)
   Vue.component(xPanel.name, xPanel)
 
@@ -144,6 +146,7 @@ export default {
   xRow,
   xCol,
   xTree,
+  xTreePro,
   xCollapse,
   xPanel
 }

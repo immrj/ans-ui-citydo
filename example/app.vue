@@ -44,6 +44,7 @@ export default {
         'split',
         'grid',
         'tree',
+        'tree-pro',
         'collapse',
       ]
     }
