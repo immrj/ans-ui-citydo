@@ -34,6 +34,10 @@ $tree-pro-prefix-cls: $lib-name + "-tree-pro";
     white-space: nowrap;
     outline: none;
 
+    &__content{
+      padding: 5px 0;
+    }
+
     &__title {
       display: inline-block;
       vertical-align: middle;
@@ -47,7 +51,7 @@ $tree-pro-prefix-cls: $lib-name + "-tree-pro";
 }
 
 .#{$tree-pro-prefix-cls}-node:focus .#{$tree-pro-prefix-cls}-node__title {
-  background-color: #F5F7FA;
+  background-color: #cde3fe;
 }
 
 .#{$tree-pro-prefix-cls}-node.is-drop-inner > .#{$tree-pro-prefix-cls}-node__content .#{$tree-pro-prefix-cls}-node__label {
@@ -64,7 +68,7 @@ $tree-pro-prefix-cls: $lib-name + "-tree-pro";
 }
 
 .#{$tree-pro-prefix-cls}-node__title:hover {
-  background-color: #F5F7FA;
+  background-color: #cde3fe;
 }
 
 .#{$tree-pro-prefix-cls}.is-dragging .#{$tree-pro-prefix-cls}-node__content {
