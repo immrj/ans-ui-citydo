@@ -142,7 +142,7 @@
       accordion: Boolean,
       indent: {
         type: Number,
-        default: 18
+        default: 15
       },
       iconClass: String
     },

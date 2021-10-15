@@ -3,7 +3,6 @@ $tree-pro-prefix-cls: $lib-name + "-tree-pro";
 .#{$tree-pro-prefix-cls} {
   position: relative;
   cursor: default;
-  background: #FFFFFF;
   color: #606266;
 
   &__empty-block {
@@ -34,6 +33,12 @@ $tree-pro-prefix-cls: $lib-name + "-tree-pro";
   &-node {
     white-space: nowrap;
     outline: none;
+
+    &__title {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 3px;
+    }
   }
 
   &-context-menu {
@@ -41,43 +46,51 @@ $tree-pro-prefix-cls: $lib-name + "-tree-pro";
   }
 }
 
-.#{$tree-pro-prefix-cls}-node:focus > .#{$tree-pro-prefix-cls}-node__content {
+.#{$tree-pro-prefix-cls}-node:focus .#{$tree-pro-prefix-cls}-node__title {
   background-color: #F5F7FA;
 }
+
 .#{$tree-pro-prefix-cls}-node.is-drop-inner > .#{$tree-pro-prefix-cls}-node__content .#{$tree-pro-prefix-cls}-node__label {
   background-color: #3790FB;
   color: #fff;
 }
 
 .#{$tree-pro-prefix-cls}-node__content > .#{$tree-pro-prefix-cls}-node__expand-icon {
-  padding: 6px;
+  padding: 0 5px;
 }
+
 .#{$tree-pro-prefix-cls}-node__content > label.#{$lib-name}-checkbox-wrapper {
   margin-right: 8px;
 }
-.#{$tree-pro-prefix-cls}-node__content:hover {
+
+.#{$tree-pro-prefix-cls}-node__title:hover {
   background-color: #F5F7FA;
 }
+
 .#{$tree-pro-prefix-cls}.is-dragging .#{$tree-pro-prefix-cls}-node__content {
   cursor: move;
 }
+
 .#{$tree-pro-prefix-cls}.is-dragging .#{$tree-pro-prefix-cls}-node__content * {
   pointer-events: none;
 }
+
 .#{$tree-pro-prefix-cls}.is-dragging.is-drop-not-allow .#{$tree-pro-prefix-cls}-node__content {
   cursor: not-allowed;
 }
 
 .#{$tree-pro-prefix-cls}-node__expand-icon {
   cursor: pointer;
-  color: #C0C4CC;
+  color: #333;
   font-size: 12px;
   transform: rotate(0deg);
   transition: transform 0.3s ease-in-out;
 }
+
 .#{$tree-pro-prefix-cls}-node__expand-icon.expanded {
   transform: rotate(90deg);
 }
+
 .#{$tree-pro-prefix-cls}-node__expand-icon.is-leaf {
   color: transparent;
   cursor: default;
@@ -90,7 +103,7 @@ $tree-pro-prefix-cls: $lib-name + "-tree-pro";
 .#{$tree-pro-prefix-cls}-node__loading-icon {
   margin-right: 8px;
   font-size: 14px;
-  color: #C0C4CC;
+  color: #333;
 
   &.#{$lib-name}-icon-spinner2 {
     animation: rotating 1s linear infinite;
@@ -98,9 +111,9 @@ $tree-pro-prefix-cls: $lib-name + "-tree-pro";
 }
 
 .#{$tree-pro-prefix-cls}-node > .#{$tree-pro-prefix-cls}-node__children {
-  overflow: hidden;
   background-color: transparent;
 }
+
 .#{$tree-pro-prefix-cls}-node.is-expanded > .#{$tree-pro-prefix-cls}-node__children {
   display: block;
 }

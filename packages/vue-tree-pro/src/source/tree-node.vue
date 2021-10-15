@@ -45,7 +45,9 @@
       >
       </x-checkbox>
       <span v-if="node.loading" :class="[prefixCls + '__loading-icon','ans-icon-spinner2']"></span>
-      <node-content :node="node"></node-content>
+      <span :class="[prefixCls + '__title']">
+        <node-content :node="node"></node-content>
+      </span>
     </div>
       <div
         :class="[prefixCls + '__children']"

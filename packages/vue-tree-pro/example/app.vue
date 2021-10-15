@@ -11,18 +11,20 @@
         Render 函数分两种，一种是给当前树的每个节点都设置同样的渲染内容，此 render 通过 Tree 组件的属性 render 传递；另一种是单独给某个节点设置，在该节点的 render
         字段内设置；同时设置时，会优先使用当前节点的 Render 函数。</h5>
       <div>
-        <x-tree-pro :data="data5" show-checkbox	:load="loadNode" lazy></x-tree-pro>
-        <x-tree-pro
-            :data="data5"
-            node-key="id"
-            :expand-on-click-node="false"
-            :render-content="renderTree"
-            @node-contextmenu="handleContextMenu">
-          <template slot="contextMenu">
-            <x-dropdown-item @click.native="handleContextMenuEdit">编辑</x-dropdown-item>
-            <x-dropdown-item @click.native="handleContextMenuDelete" style="color: #ed4014">删除</x-dropdown-item>
-          </template>
-        </x-tree-pro>
+        <div style="width: 280px; background-color: pink; padding: 0 15px;overflow: auto">
+          <x-tree-pro
+              :data="data5"
+              :default-expanded-keys="[1]"
+              node-key="id"
+              :expand-on-click-node="false"
+              :render-content="renderTree"
+              @node-contextmenu="handleContextMenu">
+            <template slot="contextMenu">
+              <x-dropdown-item @click.native="handleContextMenuEdit">编辑</x-dropdown-item>
+              <x-dropdown-item @click.native="handleContextMenuDelete" style="color: #ed4014">删除</x-dropdown-item>
+            </template>
+          </x-tree-pro>
+        </div>
       </div>
     </section>
   </div>
@@ -117,7 +119,11 @@ export default {
             }),
             h('span', {
               class: 'node-title'
-            }, data.title)
+            }, [
+              h('span', data.title),
+              h('span', 'asdfsdasdfsdasdfsdasdfsdasdfsdasdfsdasdfsd'),
+              h('span', '2021-10-15 22:22:22'),
+            ])
           ])
         ])
       }
