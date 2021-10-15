@@ -42,6 +42,7 @@ $tree-pro-prefix-cls: $lib-name + "-tree-pro";
       display: inline-block;
       vertical-align: middle;
       padding: 0 3px;
+      cursor: pointer;
     }
   }
 
@@ -50,7 +51,7 @@ $tree-pro-prefix-cls: $lib-name + "-tree-pro";
   }
 }
 
-.#{$tree-pro-prefix-cls}-node:focus .#{$tree-pro-prefix-cls}-node__title {
+.#{$tree-pro-prefix-cls}-node:focus > .#{$tree-pro-prefix-cls}-node__content >.#{$tree-pro-prefix-cls}-node__title {
   background-color: #cde3fe;
 }
 
