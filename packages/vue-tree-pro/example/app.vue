@@ -18,6 +18,7 @@
               node-key="id"
               :expand-on-click-node="false"
               :render-content="renderTree"
+              @node-expand="onNodeExpand"
               @node-contextmenu="handleContextMenu">
             <template slot="contextMenu">
               <x-dropdown-item @click.native="handleContextMenuEdit">编辑</x-dropdown-item>
@@ -43,6 +44,9 @@ export default {
     }
   },
   methods: {
+    onNodeExpand(data, node, self){
+      console.log(node)
+    },
     loadNode(node, resolve) {
       if (node.level === 0) {
         return resolve([{ title: 'region' }]);

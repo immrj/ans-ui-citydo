@@ -53,7 +53,7 @@
     <section class="demo-section">
       <h4>可关闭</h4>
       <div>
-        <x-tabs type="card" closable @on-tab-remove="handleTabRemove">
+        <x-tabs type="card" closable @on-tab-remove="handleTabRemove" :before-remove="beforeRemove">
           <x-tab-pane label="标签一" v-if="tab0">标签一的内容</x-tab-pane>
           <x-tab-pane label="标签二" v-if="tab1">标签二的内容</x-tab-pane>
           <x-tab-pane label="标签三" v-if="tab2">标签三的内容</x-tab-pane>
@@ -92,6 +92,13 @@ export default {
     }
   },
   methods: {
+    beforeRemove (item) {
+      return new Promise((resolve, reject) => {
+        if(item.label !== '标签一'){
+          resolve()
+        }
+      })
+    },
     handleTabRemove (name) {
       this['tab' + name] = false
     },

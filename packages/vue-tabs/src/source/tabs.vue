@@ -30,7 +30,7 @@
                                 <i v-if="item.icon !== ''" :class="[libName + '-icon-' + item.icon]"></i>
                                 <Render v-if="item.labelType === 'function'" :render="item.label"></Render>
                                 <template v-else>{{ item.label }}</template>
-                                <i :class="[prefixCls + '-close', libName + '-icon-close']" v-if="showClose(item)" @click.stop="handleRemove(index)"></i>
+                                <i :class="[prefixCls + '-close', libName + '-icon-close']" v-if="showClose(item)" @click.stop="handleRemove(item, index)"></i>
                             </div>
                         </div>
                     </div>
@@ -369,12 +369,12 @@ export default {
       const index = this.getTabIndex(focused)
       this.handleChange(index)
     },
-    handleRemove (index) {
+    handleRemove (item, index) {
       if (!this.beforeRemove) {
         return this.handleRemoveTab(index)
       }
 
-      const before = this.beforeRemove(index)
+      const before = this.beforeRemove(item, index)
 
       if (before && before.then) {
         before.then(() => {
