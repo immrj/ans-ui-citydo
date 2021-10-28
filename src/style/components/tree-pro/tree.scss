@@ -123,6 +123,6 @@ $tree-pro-prefix-cls: $lib-name + "-tree-pro";
   display: block;
 }
 
-.#{$tree-pro-prefix-cls}--highlight-current .#{$tree-pro-prefix-cls}-node.is-current > .#{$tree-pro-prefix-cls}-node__content {
-  background-color: #eff6ff;
+.#{$tree-pro-prefix-cls}--highlight-current .#{$tree-pro-prefix-cls}-node.is-current > .#{$tree-pro-prefix-cls}-node__content >.#{$tree-pro-prefix-cls}-node__title{
+  background-color: #cde3fe;
 }
