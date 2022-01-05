@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     updateModel (update) {
-      const value = this.value
+      const value = [...this.currentValue]
       this.children = findComponentsDownward(this, 'xCheckbox')
       if (this.children) {
         this.children.forEach(child => {
@@ -50,6 +50,7 @@ export default {
     },
     change (data) {
       this.currentValue = data
+      this.updateModel(true)
       this.$emit('input', data)
       this.$emit('on-change', data)
       this.dispatch('xFormItem', 'on-form-change', data)
