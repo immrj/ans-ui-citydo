@@ -15,6 +15,10 @@
     "start": "npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/immrj/ans-ui-citydo.git"
+  },
   "keywords": [
     "analysys",
     "vue",
